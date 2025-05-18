@@ -1,0 +1,30 @@
+OSSEC Quick Reference Guide (CLI only)
+======================================
+
+✅ Start OSSEC:
+    sudo /var/ossec/bin/wazuh-control start
+    sudo /var/ossec/bin/wazuh-control status
+
+
+📄 View OSSEC Log (alerts):
+    sudo tail -f /var/ossec/logs/alerts/alerts.log
+    (Press Ctrl + C to exit)
+
+🧪 Example Commands That Trigger OSSEC Alerts:
+---------------------------------------------
+
+1. Simulate file integrity alert:
+    sudo touch /etc/passwd
+
+2. Access sensitive system file:
+    sudo cat /etc/shadow > /dev/null
+
+3. Create a suspicious file:
+    sudo touch /tmp/malware.sh
+
+4. Try adding a new user:
+    sudo useradd testuser
+
+5. Open a privileged shell:
+    sudo su
+    exit
